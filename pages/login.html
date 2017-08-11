@@ -1,0 +1,66 @@
+<div class="login" ng-controller="loginController">
+  <h1 class="wel">WELCOME TO "RESTAURANTS SEARCH"</h1>
+<h2 class="visit">Please Login to Enter home page...</h2>
+
+    <div class="login-form">
+        <h3 class="form"> Login Form</h3>
+        <form name="loginForm">
+<div class="form-group">
+    <label class="mail" for="user-email">Email address</label>
+    <input type="email" class="form-control" id="user-email" placeholder="Email" name="email" ng-model="user.email" required="">
+    <div ng-show="loginForm.email.$error.required">Required!</div>
+    <div ng-show="loginForm.email.$error.email">This doesn't look like a valid email</div>
+</div>
+<div class="form-group">
+<label class="mail" for="user-password">Password</label>
+<input type="password" class="form-control" id="user-password" placeholder="Password" name="password" required="" ng-model="user.password" ng-minlength="6" ng-maxlength="15">
+<div ng-show="loginForm.password.$error.minlength">
+Password must be at least 6 characters long
+</div>
+<div ng-show="loginForm.password.$error.maxlength">
+Password must be at most 15 characters long
+</div>
+<div ng-show="loginForm.password.$error.required">
+Please enter your super secret ninja password
+</div>
+</div>
+<button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid" ng-click="goToHome()">Login</button>
+</form>
+    </div>
+</div>
+
+<style media="screen">
+  .visit{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: red;
+
+  }
+
+  .login{
+    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/9c/91/68/9c9168e306f3bb7c0c634255e0b966ab--restaurant-logo-design-restaurant-names.jpg");
+    background-repeat: no-repeat;
+    color:white;
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  .wel{
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    color: yellow;
+    font-size: 55px;
+  }
+
+  .form{
+    font-family: 'Courgette', cursive;
+    font-size: 25px;
+    color: #93f103;
+  }
+
+  .mail{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 25px;
+  }
+</style>
